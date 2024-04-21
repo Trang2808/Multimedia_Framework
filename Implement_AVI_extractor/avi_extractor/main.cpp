@@ -12,6 +12,8 @@
 
 using namespace std;
 
+ofstream fileoutput;
+
 namespace ReadFiles {
 
 	template<typename T> // dinh nghia mot khuan mau ham 
@@ -22,13 +24,21 @@ namespace ReadFiles {
 		for (int i = 0; i < level; i++)
 		{
 			cout << "\t";
+			fileoutput << "\t"; // file output
 		}
 
 		cout << propStr << ": ";
+		fileoutput << propStr << ": ";
 
-		if (isEndLine) cout << "\n";
+		if (isEndLine) {
+			cout << "\n";
+			fileoutput << "\n";
+		}
 
-		if (isHeader == false) cout << value << "\n";
+		if (isHeader == false) {
+			cout << value << "\n";
+			fileoutput << value << "\n";
+		}
 		
 	}
 
@@ -233,17 +243,20 @@ int main() {
 	ifstream fileinput;
 	fileinput.open("file_example_AVI_480_750kB.avi", std::ios::binary);
 
+	fileoutput.open("output_read_aviFile.txt", ios::out);
+
 	try
 	{
-		cout << "Open file success." << "\n";
 		Read_aviFile(fileinput, 0); // level = 0
 	}
 	catch (const std::exception& e)
 	{
 		cout << "Error: can't open file.avi!";
+		fileoutput << "Error: can't open file.avi!";
 	}
 
-
+	
 	fileinput.close();
+	fileoutput.close();
 	return 0;
 }

@@ -1,3 +1,3 @@
 ﻿  main.cpp
-E:\Samsung\Implement_AVI_extractor\avi_extractor\main.cpp(241,31): warning C4101: 'e': unreferenced local variable
-  avi_extractor.vcxproj -> E:\Samsung\Implement_AVI_extractor\x64\Debug\avi_extractor.exe
+E:\Samsung\Multimedia_Framework\Implement_AVI_extractor\avi_extractor\main.cpp(252,31): warning C4101: 'e': unreferenced local variable
+  avi_extractor.vcxproj -> E:\Samsung\Multimedia_Framework\Implement_AVI_extractor\x64\Debug\avi_extractor.exe
